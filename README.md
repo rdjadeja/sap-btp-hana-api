@@ -14,13 +14,6 @@ This project provides a lightweight REST API to manage your **SAP HANA Cloud dat
 
 ---
 
-## 🏗️ Project Structure
-
-hana_api/ ├── app.py # Flask app entry point ├── blueprints/ │ └── hana_control.py # Blueprint with logic ├── config.py # SAP BTP credentials & region config ├── requirements.txt # Python dependencies ├── hana_postman_collection.json # Postman collection └── README.md # You're here!
-
-
----
-
 ## ⚙️ Configuration
 
 Edit the `config.py` file with your SAP BTP values:
@@ -30,79 +23,112 @@ REGION = "eu10"  # Example: us10, ap10, etc.
 INSTANCE_ID = "<your_hana_instance_id>"
 CLIENT_ID = "<your_client_id>"
 CLIENT_SECRET = "<your_client_secret>"
+```
 
-💻 Installation & Usage
+---
+
+## 💻 Installation & Usage
+
 1. Clone the repo
-bash
-Copy
-Edit
+```bash
 git clone https://github.com/your-username/hana-cloud-control-api.git
 cd hana-cloud-control-api
+```
+
 2. Set up virtual environment
-bash
-Copy
-Edit
+```bash
 python3 -m venv venv
 source venv/bin/activate
-3. Install dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-4. Run the Flask app
-bash
-Copy
-Edit
-python app.py
-The API will now be available at:
-http://localhost:5000/hana/start-if-stopped
+```
 
-🔄 API Endpoint
-POST /hana/start-if-stopped
+3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the Flask app
+```bash
+python app.py
+```
+
+The API will now be available at:
+`http://localhost:5000/hana/start-if-stopped`
+
+---
+
+## 🔄 API Endpoint
+
+### POST /hana/start-if-stopped
+
 Checks the HANA DB instance status and starts it if it is stopped.
 
 ✅ Example Response (DB started):
 
+```json
 {
   "message": "HANA DB was stopped and has been started.",
   "details": { ... }
 }
+```
+
 ✅ Already running:
+
+```json
 {
   "message": "HANA DB is already running."
 }
+```
+
 ⚠️ In transitional state:
+
+```json
 {
   "message": "HANA DB is in transitional state: STARTING. No action taken."
 }
-🧪 Testing with Postman
+```
+
+---
+
+## 🧪 Testing with Postman
+
 Use the provided Postman collection:
 
-➤ Steps
-Open Postman
+### Steps
 
-Import hana_postman_collection.json
+1. Open Postman
+2. Import `hana_postman_collection.json`
+3. Send request to `POST http://localhost:5000/hana/start-if-stopped`
 
-Send request to POST http://localhost:5000/hana/start-if-stopped
+---
 
-🔐 Security Note
+## 🔐 Security Note
+
 For production use:
 
-Do not store credentials in config.py. Use environment variables or a vault.
+- Do not store credentials in `config.py`. Use environment variables or a vault.
+- Secure the endpoint (API keys, basic auth, OAuth2).
+- Add HTTPS and proper access control.
 
-Secure the endpoint (API keys, basic auth, OAuth2).
+---
 
-Add HTTPS and proper access control.
+## 📄 License
 
-📄 License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License.  
 Feel free to use, modify, and distribute.
 
-🤝 Contributing
+---
+
+## 🤝 Contributing
+
 Pull requests are welcome! Feel free to open issues or feature requests as well.
 
-🧠 Author
+---
+
+## 🧠 Author
+
 Ravi
 Made with ❤️ for SAP HANA Cloud & Flask
 
-PS: README generated using a bot !
+---
+
+PS: README generated using a bot!
