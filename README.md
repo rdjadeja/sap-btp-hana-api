@@ -14,6 +14,20 @@ This project provides a lightweight REST API to manage your **SAP HANA Cloud dat
 
 ---
 
+## 🏗️ Project Structure
+
+hana_api/
+├── app.py                      # Flask app entry point
+├── blueprints/
+│   └── hana_control.py         # Blueprint with logic
+├── config.py                   # SAP BTP credentials & region config
+├── requirements.txt            # Python dependencies
+├── hana_postman_collection.json # Postman collection
+└── README.md                   # You're here!
+├── LICENSE                     # License file
+└── .gitignore                  # Git ignore file
+---
+
 ## ⚙️ Configuration
 
 Edit the `config.py` file with your SAP BTP values:
@@ -30,23 +44,27 @@ CLIENT_SECRET = "<your_client_secret>"
 ## 💻 Installation & Usage
 
 1. Clone the repo
+
 ```bash
 git clone https://github.com/your-username/hana-cloud-control-api.git
 cd hana-cloud-control-api
 ```
 
 2. Set up virtual environment
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. Run the Flask app
+
 ```bash
 python app.py
 ```
@@ -75,7 +93,7 @@ Checks the HANA DB instance status and starts it if it is stopped.
 
 ```json
 {
-  "message": "HANA DB is already running."
+	"message": "HANA DB is already running."
 }
 ```
 
@@ -83,7 +101,7 @@ Checks the HANA DB instance status and starts it if it is stopped.
 
 ```json
 {
-  "message": "HANA DB is in transitional state: STARTING. No action taken."
+	"message": "HANA DB is in transitional state: STARTING. No action taken."
 }
 ```
 

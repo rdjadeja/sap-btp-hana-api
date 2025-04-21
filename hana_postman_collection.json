@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "SAP HANA DB Control API",
+    "_postman_id": "1234abcd-5678-ef90-gh12-ijklmnop3456",
+    "description": "API to start SAP HANA Cloud DB if it's stopped",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Start HANA DB if stopped",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/hana/start-if-stopped",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "hana",
+            "start-if-stopped"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
