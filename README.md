@@ -16,16 +16,15 @@ This project provides a lightweight REST API to manage your **SAP HANA Cloud dat
 
 ## 🏗️ Project Structure
 
-hana_api/
-├── app.py                      # Flask app entry point
-├── blueprints/
-│   └── hana_control.py         # Blueprint with logic
-├── config.py                   # SAP BTP credentials & region config
-├── requirements.txt            # Python dependencies
-├── hana_postman_collection.json # Postman collection
-└── README.md                   # You're here!
-├── LICENSE                     # License file
-└── .gitignore                  # Git ignore file
+	sap-btp-hana-api/
+	├── app.py # Flask application entry point
+	├── blueprints/
+	│ └── hana_control.py # API endpoint logic
+	├── config.py # SAP credentials configuration
+	├── requirements.txt # Python dependencies
+	├── hana_postman_collection.json # Postman test collection
+	└── README.md # This documentation
+
 ---
 
 ## ⚙️ Configuration
