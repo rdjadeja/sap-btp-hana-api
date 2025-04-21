@@ -2,11 +2,11 @@
 
 from flask import Blueprint, jsonify
 import requests
-from config import REGION, INSTANCE_ID, CLIENT_ID, CLIENT_SECRET
+from config import IDENTITY_ZONE,REGION, INSTANCE_ID, CLIENT_ID, CLIENT_SECRET
 
 hana_bp = Blueprint('hana', __name__, url_prefix='/hana')
 
-AUTH_URL = f"https://{REGION}.authentication.sap.hana.ondemand.com/oauth/token"
+AUTH_URL = f"https://{IDENTITY_ZONE}.authentication.{REGION}.sap.hana.ondemand.com/oauth/token"
 API_BASE_URL = f"https://api.{REGION}.hana.ondemand.com/hanacloud/instances"
 
 def get_oauth_token():

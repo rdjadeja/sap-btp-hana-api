@@ -13,7 +13,6 @@ This project provides a lightweight REST API to manage your **SAP HANA Cloud dat
 - 🧪 Postman collection included for easy testing
 
 ---
-
 ## 🏗️ Project Structure
 
 	sap-btp-hana-api/
@@ -23,7 +22,13 @@ This project provides a lightweight REST API to manage your **SAP HANA Cloud dat
 	├── config.py # SAP credentials configuration
 	├── requirements.txt # Python dependencies
 	├── hana_postman_collection.json # Postman test collection
-	└── README.md # This documentation
+  └── hana-api.http # HTTP request examples for testing
+  └── README.md # This documentation
+  └── LICENSE # Project license
+  └── .gitignore # Git ignore file
+  └── venv/ # Virtual environment (not included in repo)
+  └── .env # Environment variables (not included in repo)
+
 
 ---
 

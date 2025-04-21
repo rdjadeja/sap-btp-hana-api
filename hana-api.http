@@ -1,0 +1,3 @@
+### Start HANA DB if Stopped
+POST http://localhost:5000/hana/start-if-stopped
+Content-Type: application/json
